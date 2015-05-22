@@ -16,8 +16,16 @@
 <div id='map'></div>
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoicmFteWFyYWd1cGF0aHkiLCJhIjoiOHRoa2JJTSJ9.6Y38XMOQL80LZyrUAjXgIg';
-var map = L.mapbox.map('map', 'ramyaragupathy.b5f9371b')
-    .setView([51.0, 5.3], 3);
+var southWest = L.latLng(11.575, 79.475),
+    northEast = L.latLng(11.630, 79.560),
+    bounds = L.latLngBounds(southWest, northEast);
+
+
+var map = L.mapbox.map('map', 'ramyaragupathy.b5f9371b', {
+    maxBounds: bounds,
+    maxZoom: 8,
+    minZoom: 3
+	});
 </script>
 
 </body>
